@@ -1,0 +1,301 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+]{article}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\subsection{\texorpdfstring{\textbf{Longevity Score --- NHANES
+Validation Summary (Draft for Internal
+Review)}}{Longevity Score --- NHANES Validation Summary (Draft for Internal Review)}}\label{longevity-score-nhanes-validation-summary-draft-for-internal-review}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{\texorpdfstring{\textbf{1.
+Overview}}{1. Overview}}\label{overview}
+
+This document summarizes the first-pass validation of the
+\textbf{Longevity Score} using NHANES 2015--2016. My primary goal was to
+determine how well the score tracks with physiologic vulnerability,
+measured by a standard \textbf{Frailty Index (FI)}.
+
+The following sections include:
+
+\begin{itemize}
+\tightlist
+\item
+  Interpretation of correlation results
+\item
+  Distributions of both scores
+\item
+  Quartile analysis
+\item
+  Cohen's d effect size
+\item
+  Figures embedded below for easy reading
+\end{itemize}
+
+As a caveat, several Longevity Score v1.1 components were not available
+in NHANES 2015--2016 public data. Therefore, the present validation uses
+a reduced Longevity Score, including only variables available in NHANES.
+The following components are missing from the dataset and were excluded
+from modeling:
+
+\begin{itemize}
+\tightlist
+\item
+  Coronary Artery Calcium (CAC) score
+\item
+  Bone mineral density (DEXA hip or spine)
+\item
+  Maximal VO₂ max
+\item
+  Heart-rate variability (HRV)
+\item
+  Grip strength
+\item
+  Epigenetic age acceleration (e.g., TruAge)
+\item
+  Small HDL particle count
+\item
+  2-hour OGTT glucose
+\item
+  ALT (missing in this cycle)
+\item
+  Detailed smoking exposure (pack-years)
+\end{itemize}
+
+\subsection{Because these variables represent key cardiometabolic,
+functional, and biological aging domains, the NHANES-based LS is
+expected to have lower discrimination than the full Quotient Health
+Longevity
+Score.}\label{because-these-variables-represent-key-cardiometabolic-functional-and-biological-aging-domains-the-nhanes-based-ls-is-expected-to-have-lower-discrimination-than-the-full-quotient-health-longevity-score.}
+
+\subsection{\texorpdfstring{\textbf{2. Distribution of Frailty
+Index}}{2. Distribution of Frailty Index}}\label{distribution-of-frailty-index}
+
+The frailty index (FI) ranges from 0 to 1. In NHANES, older adults
+cluster toward the lower end.
+
+\subsubsection{\texorpdfstring{\textbf{Frailty Index
+Distribution}}{Frailty Index Distribution}}\label{frailty-index-distribution}
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{fig_fi_hist.png}}
+\caption{FI Histogram}
+\end{figure}
+
+\textbf{Interpretation:} Frailty is heavily right-skewed, as expected in
+a general population sample. Most individuals have FI \textless{} 0.1.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{\texorpdfstring{\textbf{3. Distribution of Longevity
+Score}}{3. Distribution of Longevity Score}}\label{distribution-of-longevity-score}
+
+After normalization and credit-score mapping (300--850):
+
+\subsubsection{\texorpdfstring{\textbf{Longevity Score
+Distribution}}{Longevity Score Distribution}}\label{longevity-score-distribution}
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{fig_ls_hist.png}}
+\caption{Longevity Histogram}
+\end{figure}
+
+\textbf{Interpretation:} The Longevity Score distributes smoothly with
+no major artifacts, indicating stable scaling.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{\texorpdfstring{\textbf{4. Correlation Between Longevity
+Score \& Frailty
+Index}}{4. Correlation Between Longevity Score \& Frailty Index}}\label{correlation-between-longevity-score-frailty-index}
+
+\subsubsection{\texorpdfstring{\textbf{Scatter Plot with Trend
+Line}}{Scatter Plot with Trend Line}}\label{scatter-plot-with-trend-line}
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{fig_ls_fi_scatter.png}}
+\caption{LS vs FI Scatter}
+\end{figure}
+
+\textbf{Key finding:}
+
+\begin{itemize}
+\tightlist
+\item
+  Pearson correlation: \textbf{--0.33}
+\item
+  Higher Longevity Scores tend to correspond to lower frailty levels.
+\end{itemize}
+
+This is consistent with expected relationships between physiological
+risk scores and frailty constructs.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{\texorpdfstring{\textbf{5. Quartile
+Analysis}}{5. Quartile Analysis}}\label{quartile-analysis}
+
+We divided the sample into Longevity Score quartiles (Q1--Q4).
+
+\subsubsection{\texorpdfstring{\textbf{Frailty Index Across Longevity
+Score
+Quartiles}}{Frailty Index Across Longevity Score Quartiles}}\label{frailty-index-across-longevity-score-quartiles}
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{fig_ls_fi_quartile.png}}
+\caption{Quartile Boxplot}
+\end{figure}
+
+\textbf{Mean FI by quartile:}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+Quartile & Mean FI \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{Q1 (Lowest LS)} & 0.149 \\
+Q2 & 0.084 \\
+Q3 & 0.055 \\
+\textbf{Q4 (Highest LS)} & 0.039 \\
+\end{longtable}
+}
+
+\textbf{Interpretation:} Frailty burden decreases \textbf{monotonically}
+with improving Longevity Score. The healthiest quartile shows
+\textbf{3--4× lower frailty} than the least healthy group.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{\texorpdfstring{\textbf{6. Effect Size (Cohen's
+d)}}{6. Effect Size (Cohen's d)}}\label{effect-size-cohens-d}
+
+We dichotomized frailty using the standard cutoff (FI ≥ 0.25 =
+``frail'').
+
+\subsubsection{\texorpdfstring{\textbf{Longevity Score Differences by
+Frailty
+Group}}{Longevity Score Differences by Frailty Group}}\label{longevity-score-differences-by-frailty-group}
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{fig_ls_frail_groups.png}}
+\caption{LS by Frailty Group}
+\end{figure}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Cohen's d = 0.677}
+\end{itemize}
+
+\textbf{Interpretation:} Medium-to-large effect size. A randomly
+selected non-frail adult has about a \textbf{70\% chance} of having a
+higher Longevity Score than a frail adult.
+
+This is a strong signal for a cross-sectional population dataset.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{\texorpdfstring{\textbf{7. Summary of
+Findings}}{7. Summary of Findings}}\label{summary-of-findings}
+
+\begin{itemize}
+\tightlist
+\item
+  The Longevity Score \textbf{correlates moderately} with frailty (r ≈
+  --0.33).
+\item
+  Quartile analysis shows \textbf{clean stepwise separation}.
+\item
+  The magnitude of difference between frail vs.~non-frail adults
+  (\textbf{d = 0.677}) is substantial.
+\item
+  Overall, the score demonstrates promising discriminative performance,
+  even in a non-clinical dataset with limited biomarkers.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\end{document}
