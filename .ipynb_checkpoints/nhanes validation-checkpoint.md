@@ -37,7 +37,7 @@ The frailty index (FI) ranges from 0 to 1. In NHANES, older adults cluster towar
 
 ### **Frailty Index Distribution**
 
-![FI Histogram]("fig_fi_hist.png")
+![FI Histogram](fig_fi_hist.png)
 
 **Interpretation:**
 Frailty is heavily right-skewed, as expected in a general population sample. Most individuals have FI < 0.1.
@@ -50,7 +50,7 @@ After normalization and credit-score mapping (300–850):
 
 ### **Longevity Score Distribution**
 
-![Longevity Histogram]("fig_ls_hist.png")
+![Longevity Histogram](fig_ls_hist.png)
 
 **Interpretation:**
 The Longevity Score distributes smoothly with no major artifacts, indicating stable scaling.
@@ -61,7 +61,7 @@ The Longevity Score distributes smoothly with no major artifacts, indicating sta
 
 ### **Scatter Plot with Trend Line**
 
-![LS vs FI Scatter]("fig_ls_fi_scatter.png")
+![LS vs FI Scatter](fig_ls_fi_scatter.png)
 
 **Key finding:**
 
@@ -78,7 +78,7 @@ We divided the sample into Longevity Score quartiles (Q1–Q4).
 
 ### **Frailty Index Across Longevity Score Quartiles**
 
-![Quartile Boxplot]("fig_ls_fi_quartile.png")
+![Quartile Boxplot](fig_ls_fi_quartile.png)
 
 **Mean FI by quartile:**
 
@@ -101,7 +101,7 @@ We dichotomized frailty using the standard cutoff (FI ≥ 0.25 = “frail”).
 
 ### **Longevity Score Differences by Frailty Group**
 
-![LS by Frailty Group]("fig_ls_frail_groups.png")
+![LS by Frailty Group](fig_ls_frail_groups.png)
 
 * **Cohen’s d = 0.677**
 
