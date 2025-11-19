@@ -1,0 +1,109 @@
+## **Longevity Score — NHANES Validation Summary (Draft for Internal Review)**
+
+---
+
+## **1. Overview**
+
+This document summarizes the first-pass validation of the **Longevity Score** using NHANES 2015–2016.
+My primary goal was to determine how well the score tracks with physiologic vulnerability, measured by a standard **Frailty Index (FI)**.
+
+The following sections include:
+
+* Interpretation of correlation results
+* Distributions of both scores
+* Quartile analysis
+* Cohen’s d effect size
+* Figures embedded below for easy reading
+
+---
+
+## **2. Distribution of Frailty Index**
+
+The frailty index (FI) ranges from 0 to 1. In NHANES, older adults cluster toward the lower end.
+
+### **Frailty Index Distribution**
+
+![FI Histogram](fig_fi_hist.png)
+
+**Interpretation:**
+Frailty is heavily right-skewed, as expected in a general population sample. Most individuals have FI < 0.1.
+
+---
+
+## **3. Distribution of Longevity Score**
+
+After normalization and credit-score mapping (300–850):
+
+### **Longevity Score Distribution**
+
+![Longevity Histogram](fig_ls_hist.png)
+
+**Interpretation:**
+The Longevity Score distributes smoothly with no major artifacts, indicating stable scaling.
+
+---
+
+## **4. Correlation Between Longevity Score & Frailty Index**
+
+### **Scatter Plot with Trend Line**
+
+![LS vs FI Scatter](fig_ls_fi_scatter.png)
+
+**Key finding:**
+
+* Pearson correlation: **–0.33**
+* Higher Longevity Scores tend to correspond to lower frailty levels.
+
+This is consistent with expected relationships between physiological risk scores and frailty constructs.
+
+---
+
+## **5. Quartile Analysis**
+
+We divided the sample into Longevity Score quartiles (Q1–Q4).
+
+### **Frailty Index Across Longevity Score Quartiles**
+
+![Quartile Boxplot](fig_ls_fi_quartile.png)
+
+**Mean FI by quartile:**
+
+| Quartile            | Mean FI |
+| ------------------- | ------- |
+| **Q1 (Lowest LS)**  | 0.149   |
+| Q2                  | 0.084   |
+| Q3                  | 0.055   |
+| **Q4 (Highest LS)** | 0.039   |
+
+**Interpretation:**
+Frailty burden decreases **monotonically** with improving Longevity Score.
+The healthiest quartile shows **3–4× lower frailty** than the least healthy group.
+
+---
+
+## **6. Effect Size (Cohen’s d)**
+
+We dichotomized frailty using the standard cutoff (FI ≥ 0.25 = “frail”).
+
+### **Longevity Score Differences by Frailty Group**
+
+![LS by Frailty Group](fig_ls_frail_groups.png)
+
+* **Cohen’s d = 0.677**
+
+**Interpretation:**
+Medium-to-large effect size.
+A randomly selected non-frail adult has about a **70% chance** of having a higher Longevity Score than a frail adult.
+
+This is a strong signal for a cross-sectional population dataset.
+
+---
+
+## **7. Summary of Findings**
+
+* The Longevity Score **correlates moderately** with frailty (r ≈ –0.33).
+* Quartile analysis shows **clean stepwise separation**.
+* The magnitude of difference between frail vs. non-frail adults (**d = 0.677**) is substantial.
+* Overall, the score demonstrates promising discriminative performance, even in a non-clinical dataset with limited biomarkers.
+
+---
