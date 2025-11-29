@@ -1,0 +1,32 @@
+# Ignore Jupyter checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# Ignore NHANES cache files
+nhanes_cache/
+*.xpt
+*.XPT
+
+# Ignore temporary local data files
+*.csv
+*.feather
+*.xls
+*.xlsx
+*.zip
+*.tar
+*.tar.gz
+*.tar.xz
+*.exe
+*.dat
+*.sas7bdat
+
+# Ignore images/plots
+*.png
+*.jpg
+*.jpeg
+*.gif
+iframe_figures/
+
+# Ignore macOS junk
+.DS_Store
+
